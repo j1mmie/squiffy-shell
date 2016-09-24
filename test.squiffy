@@ -1,0 +1,52 @@
+@title Squiffy Example
+
+[[Introduction]]:
+# Squiffy Test
+This is [a website link](http://textadventures.co.uk).
+
+This should be [a link to a passage](passage). Here's [another one](passage2).
+
+You don't need to specify a name - for example, this [link] and this [[section]].
+
+And this goes to the [[next section]](section2).
+
+This line has links to [[section 3]] and [[section 4]](section four).
+
+This line has links to [passage 3] and [passage 4](passage four).
+
+Oh look - [it's a passage with an apostrophe].
+
+[passage]:
+Here's some text for the passage.
+
+[passage2]:
+	alert ("This passage has some JavaScript");
+
+This is the text for the second passage.
+
+[passage 3]:
+Another passage.
+
+[passage four]:
+Yet another passage.
+
+[link]:
+Here is the text for the simple link.
+
+[it's a passage with an apostrophe]:
+Nothing to worry about.
+
+[[section2]]:
+
+	alert ("This section has some JavaScript");
+
+This is the next section.
+
+[[section]]:
+This is another section.
+
+[[section 3]]:
+Another section is here.
+
+[[section four]]:
+Some other section.

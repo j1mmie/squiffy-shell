@@ -1,0 +1,25 @@
+{
+  "name": "squiffy-shell",
+  "version": "0.0.1",
+  "bin": {
+    "squiffy-shell" : "./squiffy-shell.js"
+  },
+  "description": "Interactive shell player for Squiffy compiled Javascript stories",
+  "main": "squiffy-shell.js",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "htmlparser": "^1.7.7",
+    "inquirer": "^1.1.3",
+    "jquery": "^3.1.1",
+    "jsdom": "^9.5.0",
+    "open": "0.0.5",
+    "squiffy": "^5.1.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "\"Jimmie Tyrrell\" <jimmie@subpixel.net>",
+  "license": "ISC"
+}
