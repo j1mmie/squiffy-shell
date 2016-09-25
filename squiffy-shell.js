@@ -4,8 +4,13 @@ var _        = require('underscore');
 var inquirer = require('inquirer');
 var open     = require('open');
 var colors   = require('colors');
+var path     = require('path');
 
-const BLOCK_LEVEL = ['ADDRESS', 'BLOCKQUOTE', 'CENTER', 'DIR', 'DIV', 'DL', 'FIELDSET', 'FORM', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'ISINDEX', 'MENU', 'NOFRAMES', 'NOSCRIPT', 'OL', 'P', 'PRE', 'TABLE', 'UL'];
+var storyRelPath = process.argv.length > 2 ? process.argv[2] : 'story.js';
+
+const BLOCK_LEVEL = ['ADDRESS', 'BLOCKQUOTE', 'CENTER', 'DIR', 'DIV', 'DL',
+  'FIELDSET', 'FORM', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'ISINDEX', 'MENU',
+  'NOFRAMES', 'NOSCRIPT', 'OL', 'P', 'PRE', 'TABLE', 'UL'];
 
 var jQueryMixins = {
   isSectionAction: function() {
@@ -108,7 +113,14 @@ require('jsdom').env('', function (err, window) {
   global.$ = global.jQuery = require('jquery');
   _.extend(jQuery.fn, jQueryMixins);
 
-  require('./story.js');
+  var storyAbsPath = path.resolve(process.cwd(), storyRelPath);
+  try {
+    require(storyAbsPath);
+  } catch (e) {
+    putsLine('Unable to find story file at path', storyAbsPath);
+    return 1;
+  }
+
   var main = $('<div/>');
 
   main.squiffy();
